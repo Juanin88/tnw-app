@@ -5,9 +5,11 @@ import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { TestComponent } from './test.component';
-import { TnwComponent } from './tnw.component';
+import { AppComponent } from './components/app.component';
+import { TestComponent } from './components/test.component';
+import { TnwComponent } from './components/tnw.component';
+import { HeroFormComponent } from './components/form/hero-form.component';
+import { UserloginFormComponent } from './components/form/Userlogin-form.component';
 
 // Import HttpClientModule from @angular/common/http
 import {HttpClientModule } from '@angular/common/http';
@@ -16,7 +18,9 @@ import {HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     TestComponent,
-    TnwComponent
+    TnwComponent,
+    HeroFormComponent,
+    UserloginFormComponent
   ],
   imports: [
     BrowserModule,

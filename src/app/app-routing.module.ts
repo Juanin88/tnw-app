@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { TestComponent } from './test.component';
-import { TnwComponent } from './tnw.component';
+import { TestComponent } from './components/test.component';
+import { TnwComponent } from './components/tnw.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
