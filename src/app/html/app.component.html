@@ -1,7 +1,12 @@
 <h1>Welcome to {{title}}</h1>
-   <nav>
-     <a routerLink="/test">test</a>
-     <a routerLink="/tnw">tnw</a>
-   </nav>
-
+<nav class="navbar navbar-default">
+ 	 <div class="container-fluid">
+	    <ul class="nav navbar-nav">
+		  	<li role="presentation"><a routerLink="/test">test</a></li>
+		    <li role="presentation"><a routerLink="/tnw">tnw</a></li>
+		    <li role="presentation"><a routerLink="/people">Personas</a></li>
+		</ul>
+	  </div><!-- /.navbar-collapse -->
+	
+</nav>
 <router-outlet></router-outlet>

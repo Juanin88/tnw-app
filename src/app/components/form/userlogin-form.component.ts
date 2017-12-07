@@ -12,9 +12,9 @@ import { LoginService } from '../../services/login.service';
 export class UserloginFormComponent {
 
   model = new User('juanin','12345678');
-  responseLogin;
+  responseLogin: any;
   storage;
-  
+  vartest='antes';
   constructor(private http: HttpClient, private loginService: LoginService) { }
   
 //urlString = 'http://localhost/tnw/html/package/api/method/loginTNW';
@@ -24,39 +24,8 @@ export class UserloginFormComponent {
   onSubmit() { this.submitted = true; }
   
   login () {
-      this.loginService.loginTNW(this.model.usuario, this.model.password);
-  }
-  
-
-  
-// TODO: Remove this when we're done
-// get diagnostic() { return JSON.stringify(this.model); }
-//  login() {
-//
-//      const body = {
-//              usuario : this.model.usuario,
-//              password : this.model.password
-//      };
-//      
-//      var datos ;
-//
-//      const req = this.http.post( this.urlString, body );
-//      
-//      req.subscribe( data => {
-//          this.responseLogin = data;
-//          this.storage = this.responseLogin.RESPONSE.SESSION.Zend_Auth.storage;
-//          
-//          if ( this.responseLogin.RESPONSE.status_login ) {
-//              alert('suseful!');
-//              
-//          } 
-//          
-//      });
-//  }
-//  
-  
-  
-  
-  
-  
+      this.vartest='despúes';
+      this.responseLogin = this.loginService.loginTNW(this.model.usuario, this.model.password);
+      //this.storage = this.responseLogin.RESPONSE.SESSION.Zend_Auth.storage;
+  }  
 }

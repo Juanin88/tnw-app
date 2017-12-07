@@ -12,10 +12,14 @@ export class TestComponent {
 
  clickMessage = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private http2: HttpClient) { }
 
+//  urlString = 'http://preproduccion.travelnet.com.mx/package/api/method/availabilityHotel';
+//  urlStringSession = 'http://preproduccion.travelnet.com.mx/package/api/method/sessionConfiguration';
+  
   urlString = 'http://localhost/tnw/html/package/api/method/availabilityHotel';
-
+  urlStringSession = 'http://localhost/tnw/html/package/api/method/sessionConfiguration';
+  
   values = '';
 
   onKey(event: any) { // without type info
@@ -26,7 +30,7 @@ export class TestComponent {
   onClickMe() {
 
     const body = {
-      'prid' : '001',
+      'prid' : '014',
       'values' : this.values,
       'from': {
         'citycode': 'CBR',
@@ -38,14 +42,14 @@ export class TestComponent {
       },
       'to': {
         'citycode': 'CUN',
-        'cityname': 'Cancún',
+        'cityname': 'CancÃºn',
         'countrycode': 'MX',
         'airport_code': 'CUN',
         'airport_name': 'Cancun Aeropuerto Internacional',
         'airport_country_code': 'MX'
       },
-      'startDate': '2017-09-12',
-      'endDate': '2017-09-23',
+      'startDate': '2017-10-20',
+      'endDate': '2017-10-25',
       'currency': 'MXN',
       'rooms': {
         '1' : {
@@ -86,6 +90,11 @@ export class TestComponent {
     this.http.post( this.urlString, body  ).subscribe( data => {
       console.log( data );
     });
+
+
+//    this.http2.post( this.urlStringSession , body).subscribe( data => {
+//      console.log( data );
+//    });
 
   }
 }

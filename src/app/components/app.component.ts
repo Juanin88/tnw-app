@@ -9,5 +9,5 @@ import { Params } from '@angular/router';
   styleUrls: ['../css/app.component.css']
 })
 export class AppComponent {
-  title = 'Travelnet';
+  title = 'Travelnet 2017';
 }

@@ -8,8 +8,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app.component';
 import { TestComponent } from './components/test.component';
 import { TnwComponent } from './components/tnw.component';
+import { PeopleComponent } from './components/people.component';
+
 import { HeroFormComponent } from './components/form/hero-form.component';
-import { UserloginFormComponent } from './components/form/Userlogin-form.component';
+import { UserloginFormComponent } from './components/form/userlogin-form.component';
+import { LoginService } from './services/login.service';
 
 // Import HttpClientModule from @angular/common/http
 import {HttpClientModule } from '@angular/common/http';
@@ -20,7 +23,8 @@ import {HttpClientModule } from '@angular/common/http';
     TestComponent,
     TnwComponent,
     HeroFormComponent,
-    UserloginFormComponent
+    UserloginFormComponent,
+    PeopleComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,7 @@ import {HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

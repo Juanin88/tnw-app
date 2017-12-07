@@ -1,41 +1,35 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { Headers, Http } from '@angular/http';
-
-//import 'rxjs/add/operator/toPromise';
-
-import { User }    from '../models/user';
-
+import { Response, Http } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class LoginService {
 
-    constructor(private http: HttpClient) { }
-    responseLogin;
-    storage;
-
-    
-//    create(name: string): Promise<Hero> {
-//        return this.http
-//          .post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
-//          .toPromise()
-//          .then(res => res.json().data as Hero)
-//          .catch(this.handleError);
-//        }
+    constructor(private _http: Http) { }
     
     loginTNW( usuario:string , password: string) {
-        const urlString = 'http://localhost/tnw/html/package/api/method/loginTNW';
+    //let urlString: string = 'http://preproduccion.travelnet.com.mx/package/api/method/loginTNW';
+    let urlString: string = 'http://localhost/tnw/html/package/api/method/loginTNW';
+    
+    
+    
         const body = {
                 usuario : usuario,
                 password : password
         };
 
-        const req = this.http.post( urlString, body );
+        return this._http.post( urlString, body ).subscribe(
+            data => {
+                console.log(data)
+            });
         
-        req.subscribe( data => {
+/*        req.subscribe( data => {
             this.responseLogin = data;
-            this.storage = this.responseLogin.RESPONSE.SESSION.Zend_Auth.storage;      
+            //this.storage = this.responseLogin.RESPONSE.SESSION.Zend_Auth.storage;      
+            
         });
+        
+        return this.responseLogin;*/
     }
 }  
 

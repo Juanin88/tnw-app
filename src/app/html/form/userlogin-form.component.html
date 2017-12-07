@@ -15,16 +15,10 @@
   			Password is required
 			</div>
 		</div>
-		<button type="button" class="btn btn-default" (click)="login()">Login</button>
+		<div class="form-group">
+			<button type="button" class="btn btn-default" (click)="login()">Login</button>
+		</div>
 	</form>
 </div>
-{{ model.usuario }} - 
-{{ model.password }}
-<br>
-{{ responseLogin.RESPONSE.SESSION.Zend_Auth.storage.apellido_paterno }} <br>
-{{ storage.apellido_paterno }}
 
-<ul class="list-group">
-  <li class="list-group-item" *ngFor="let item of storage">{{ item.apellido_paterno }}</li>
-</ul>
 
