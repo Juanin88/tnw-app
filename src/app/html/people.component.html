@@ -1,4 +1,23 @@
 <h1>People!!</h1>
-
-    <button (click)="getPeople()">Consulta Personas</button>
+    <button (click)="getPeopleFETCH()">Consulta Personas por FETCH</button>
     {{clickMessage}}
+    <br>
+    <button (click)="getPeoplePOST()">Consulta Personas por POST</button>
+<hr>
+
+<div class="container">
+	<div class="col-md-6">
+		<div class="well">
+		  	<ul>
+		    	<li *ngFor="let person of peoplesFETCH">{{person.nombre}} {{person.ap}}</li>
+		  	</ul>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="well">
+		  	<ul>
+		    	<li *ngFor="let person of peoplesPOST">{{person.nombre}} {{person.ap}}</li>
+		  	</ul>
+		</div>
+	</div>
+</div>

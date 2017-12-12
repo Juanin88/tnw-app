@@ -2,9 +2,9 @@ import { Component, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from "@angular/common/http";
 import { People } from "../models/people";
-import 'rxjs/add/operator/toPromise';
 import { Router } from "@angular/router/router";
 import { UtilsService } from "../services/utils.service";
+import 'rxjs/add/operator/toPromise';
 
 @Component({
     selector: 'app-people',
@@ -13,16 +13,21 @@ import { UtilsService } from "../services/utils.service";
    })
  
 export class PeopleComponent {
-    people : People[];
+    peoplesFETCH : People[];
 
-   constructor( private utilsService: UtilsService) { }
-    
-//    url = 'http://localhost/desarrollo/api-rest.php';
-   // getPeople(): void{
-        //this.utilsService.getPeople().then(people => this.people = people);
-     //   console.log('Get People.');
-   // }
-    
+    peoplesPOST : People[];
+   
+   constructor( private utilsService: UtilsService) {
+       
+   }
 
-} 
+   getPeopleFETCH(): void{
+        this.utilsService.getPeopleFETCH().then(people => this.peoplesFETCH = people);
+    }
+   
+   getPeoplePOST(): void{
+       this.utilsService.getPeoplePOST().then(people => this.peoplesPOST = people);
+   }
+
+}
   

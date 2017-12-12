@@ -13,6 +13,7 @@ import { PeopleComponent } from './components/people.component';
 import { HeroFormComponent } from './components/form/hero-form.component';
 import { UserloginFormComponent } from './components/form/userlogin-form.component';
 import { LoginService } from './services/login.service';
+import { UtilsService } from './services/utils.service';
 
 // Import HttpClientModule from @angular/common/http
 import {HttpClientModule } from '@angular/common/http';
@@ -33,7 +34,7 @@ import {HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
   ],
-  providers: [LoginService],
+  providers: [LoginService, UtilsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
